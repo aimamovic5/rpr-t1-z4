@@ -18,21 +18,27 @@ public class Program {
         pomocni[this.studenti.length] = new Student(imeStudenta, prezimeStudenta, brojIndexa);
         this.studenti = pomocni;
     }
-    public void obrisiStudenta(Student student) {
+    public void obrisiStudenta(int brojIndeksa) {
         int pronadjen = 0;
         Student[] temp = new Student[this.studenti.length - 1];
         for (int i = 0; i < studenti.length; i++)
-            if (this.studenti[i].getBrojIndeksa() != student.getBrojIndeksa()) temp[i-pronadjen] = this.studenti[i];
+            if (this.studenti[i].getBrojIndeksa() != brojIndeksa) temp[i-pronadjen] = this.studenti[i];
             else pronadjen = 1;
         this.studenti = temp;
     }
-    public void obrisiPredmet(Predmet predmet) {
+    public void obrisiPredmet(int sifraPredmeta) {
         int pronadjen = 0;
         Predmet[] temp = new Predmet[this.predmeti.length - 1];
         for (int i = 0; i < predmeti.length; i++)
-            if (this.predmeti[i].getSifraPredmeta() != predmet.getSifraPredmeta()) temp[i-pronadjen] = this.predmeti[i];
+            if (this.predmeti[i].getSifraPredmeta() != sifraPredmeta) temp[i-pronadjen] = this.predmeti[i];
             else pronadjen = 1;
         this.predmeti = temp;
+    }
+    public void ispisiStudenteNaPredmetu(String nazivPredmeta) {
+        for (int i = 0; i < predmeti.length; i++)
+            if (nazivPredmeta.equals(predmeti[i].getNazivPredmeta()))
+                for (int j = 0; j < predmeti[i].getStudenti().length; j++)
+                    System.out.println((predmeti[i].getStudenti())[i]);
     }
     public static void main(String[] args) {
 	// write your code here

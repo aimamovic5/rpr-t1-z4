@@ -1,4 +1,5 @@
 package ba.unsa.etf.rpr;
+import java.io.PrintStream;
 
 public class Student {
     private String imeStudenta = null;
@@ -33,5 +34,10 @@ public class Student {
 
     public void setBrojIndeksa(Integer brojIndeksa) {
         this.brojIndeksa = brojIndeksa;
+    }
+
+    @Override
+    public String toString() {
+        return this.getPrezimeStudenta() + " " + this.getImeStudenta() + " (" + Integer.toString(this.getBrojIndeksa()) + ")\n";
     }
 }
