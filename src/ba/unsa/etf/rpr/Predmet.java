@@ -6,8 +6,7 @@ public class Predmet {
     private Integer sifraPredmeta = null;
     private Integer maksimalanBrojStudenata = 0;
 
-    public Predmet(Student[] studenti, String nazivPredmeta, Integer sifraPredmeta, Integer maksimalanBrojStudenata) {
-        this.studenti = studenti;
+    public Predmet(String nazivPredmeta, Integer sifraPredmeta, Integer maksimalanBrojStudenata) {
         this.nazivPredmeta = nazivPredmeta;
         this.sifraPredmeta = sifraPredmeta;
         this.maksimalanBrojStudenata = maksimalanBrojStudenata;
