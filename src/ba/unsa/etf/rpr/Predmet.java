@@ -36,6 +36,7 @@ public class Predmet {
         this.sifraPredmeta = sifraPredmeta;
     }
     public boolean daLiJeStudentUpisan(Student student) {
+        if (this.studenti == null) return false;
         for (int i = 0; i < this.studenti.length; i++) if (this.studenti[i].getBrojIndeksa() == student.getBrojIndeksa()) return true;
         return false;
     }
