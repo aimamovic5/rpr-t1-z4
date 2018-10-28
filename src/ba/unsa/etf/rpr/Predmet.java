@@ -40,7 +40,7 @@ public class Predmet {
         return false;
     }
     public void upisi(Student student) {
-        if (studenti.length == 0 || studenti == null) {
+        if (studenti == null || studenti.length == 0) {
             studenti = new Student[1];
             studenti[0] = student;
         }
@@ -53,7 +53,6 @@ public class Predmet {
             for (int i = 0; i < studenti.length; i++) pomocni[i] = studenti[i];
             pomocni[studenti.length] = student;
             studenti = pomocni;
-            System.out.println("Student je uspješno upisan na predmet!");
         }
     }
     public void ispisi(Student student) {
@@ -68,9 +67,7 @@ public class Predmet {
                 if (student.getBrojIndeksa() != studenti[i].getBrojIndeksa()) pomocni[i-pronadjen] = studenti[i];
                 else pronadjen = 1;
             }
-            System.out.println("Student je uspješno obrisan sa predmeta!");
+            studenti = pomocni;
         }
     }
-
-
 }
